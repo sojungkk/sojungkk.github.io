@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>garrery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/96196c054e.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Gowun Dodum', sans-serif;
+            margin: 0;
+            background-color: rgb(131, 195, 142);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 300px);
+            grid-template-rows: repeat(4, 200px);
+            grid-gap: 1rem;
+            grid-template-areas:
+                'a c c h'
+                'b c c h'
+                'b d e h'
+                'f g e h';
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .images1 {
+            grid-area: a;
+        }
+        .images2 {
+            grid-area: b;
+        }
+        .images3 {
+            grid-area: c;
+        }
+        .images4 {
+            grid-area: d;
+        }
+        .images5 {
+            grid-area: e;
+        }
+        .images6 {
+            grid-area: f;
+        }
+        .images7 {
+            grid-area: g;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(208, 247, 208, 0.891);
+        }
+        .nav_menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav_menu li {
+            font-size: 15px;
+            padding: 10px 15px;
+        }
+        .nav_menu li:hover {
+            background-color: rgba(255, 255, 255, 0.706);
+            border-radius: 7px;
+        }
+        .nav_menu li:active {
+            background-color: rgba(255, 255, 255, 0.706);
+            border-radius: 7px;
+        }
+        .nav_right {
+            display: flex;
+            list-style: none;
+        }
+        .nav_right li {
+            color: #7ac77f;
+            padding: 10px 15px;
+        }
+        a {
+            text-decoration: none;
+            color: #7ac77f;
+        }
+        .burger_button {
+            display: none;
+            color: rgb(118, 174, 122);
+            position: absolute;
+            right: 30px;
+        }
+        @media screen and (max-width: 500px) {
+            .navigation {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav_menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .nav_right {
+                display: none;
+                justify-content: center;
+                width: 100%;
+            }
+            .burger_button {
+                display: block;
+            }
+        }
+        .text_overlay {
+            grid-area: h;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .text_overlay p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav_left">
+            <i class="fa-solid fa-frog fa-bounce" style="color: #7ac77f;"></i>
+            <a href="http://rlathwjd1.netlify.app">sojung</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="garrery.html">Gallery</a></li>
+            <li><a href="whereIam.html">Where I Am</a></li>
+            <li><a href="summer.html">Summer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><i class="fa-solid fa-headphones-simple"></i></li>
+            <li><i class="fa-solid fa-envelope"></i></li>
+        </ul>
+        <a href="" class="burger_button"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+
+    <section class="container">
+        <img src="1.jpg" alt="" class="image images1">
+        <img src="2.jpg" alt="" class="image images2">
+        <img src="3.jpg" alt="" class="image images3">
+        <img src="4.jpg" alt="" class="image images4">
+        <img src="5.jpg" alt="" class="image images5">
+        <img src="6.jpg" alt="" class="image images6">
+        <img src="7.jpg" alt="" class="image images7">
+        <div class="text_overlay">
+            <p>These are pictures from when I was younger</p>
+        </div>
+    </section>
+
+</body>
+</html>

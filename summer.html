@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/96196c054e.js" crossorigin="anonymous"></script>
+    <link rel="short icon" href="파비콘.png" type="image/x-ico">
+    <link rel="icon" href="파비콘.png" type="image/x-ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+
+    
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav_left">
+            <i class="fa-solid fa-frog fa-bounce" style="color: #7ac77f;"></i>
+            <a href="http://rlathwjd1.netlify.app">sojung</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="garrery.html">Gallery</a></li>
+            <li><a href="whereIam.html">Where I Am</a></li>
+            <li><a href="summer.html">Summer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><i class="fa-solid fa-headphones-simple"></i></li>
+            <li><i class="fa-solid fa-envelope"></i></li>
+        </ul>
+        <a href="" class="burger_button"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+    
+    <center>
+        <h1>My summer</h1>
+        <hr>
+    </center>
+    <p>my summer vacation plans</p>
+    <button onclick="getSome()">what is it</button>
+    <div id="here" style="width: 300px; height: 60px; font-style: italic;"></div>
+
+    <script>
+        function getSome() {
+            showme = new XMLHttpRequest();
+            showme.onload = function() {
+                document.getElementById("here").innerHTML = this.responseText;
+            };
+            showme.open("GET", "summer.txt", true);
+            showme.send();
+        }
+    </script>
+
+    <div class="container">
+        <h3>Background Color</h3>
+        <div>
+            <label for="bgcolor">Choose the background color you want</label>
+            <input type="text" id="bgcolor" value="eg)FFFF33">
+        </div>
+
+        <script>
+            aboutHtml = document.querySelector('html');
+            bgcolorWhat = document.getElementById('bgcolor');
+            
+            function changeColor()
+            {
+                localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
+                setStyles();
+            }
+    
+            function  setStyles()
+            {
+                whatColor = localStorage.getItem('bgcolor');
+                aboutHtml.style.backgroundColor='#'+whatColor;
+            }
+            bgcolorWhat.onchange = changeColor;
+        </script>
+
+        <div>
+            <label for="image">Choose your summer vacation plan</label>
+            <select id="image" onchange="changeImage()">
+                <option value="guitar.jpg">guitar</option>
+                <option value="exercise.jpg">work out</option>
+                <option value="book.jpg">reading</option>
+                <option value="trip.jpg">trip</option>
+            </select>
+        </div>
+        <img id="summerImage" src="guitar.jpg" width="800" height="600">
+    </div>
+
+    <script>
+        const imageSelect = document.getElementById('image');
+        const summerImage = document.getElementById('summerImage');
+
+        function changeImage() {
+            const selectedImage = imageSelect.value;
+            summerImage.src = selectedImage;
+        }
+        
+    </script>
+</body>
+</html>

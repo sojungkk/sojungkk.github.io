@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aboutme</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/96196c054e.js" crossorigin="anonymous"></script>
+    <link rel="short icon" href="파비콘.png" type="image/x-ico">
+    <link rel="icon" href="파비콘.png" type="image/x-ico">
+
+    <style>
+        body
+        {
+            font-family: 'Gowun Dodum', sans-serif;
+            margin: 0;
+        }
+        .navigation
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(208, 247, 208, 0.891);
+        }
+        .nav_menu
+        {
+            display: flex;
+            list-style: none;
+        }
+        .nav_menu li 
+        {
+            font-size: 15px;
+            padding: 10px 15px;
+        }
+        .nav_menu li :hover
+        {
+            background-color: rgba(255, 255, 255, 0.706);
+            border-radius: 7px;
+        }
+        .nav_menu li :active
+        {
+            background-color: rgba(255, 255, 255, 0.706);
+            border-radius: 7px;
+        }
+        .nav_right
+        {
+            display: flex;
+            list-style: none;
+        }
+        .nav_right li
+        {
+            color: #7ac77f;
+            padding: 10px 15px;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #7ac77f;
+        }
+        .burger_button
+        {
+            display: none;
+            color: rgb(118, 174, 122);
+            position: absolute;
+            right: 30px;
+        }
+        @media screen and (max-width: 500px)
+        {
+            .navigation
+            {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav_menu
+            {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .nav_right
+            {
+                display: none;
+                justify-content: center;
+                width: 100%;
+            }
+            .burger_button
+            {
+                display: block;
+            }
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #629e66ba;
+        }
+
+        hr {
+            border-color: #548a58;
+            border-width: 1px;
+        }
+
+        .song {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .song img {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .song .details {
+            color: #629f66;
+        }
+
+        .dog img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav_left">
+            <i class="fa-solid fa-frog fa-bounce" style="color: #7ac77f;"></i>
+            <a href="http://rlathwjd1.netlify.app">sojung</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="garrery.html">Gallery</a></li>
+            <li><a href="whereIam.html">Where I Am</a></li>
+            <li><a href="summer.html">Summer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><i class="fa-solid fa-headphones-simple"></i></li>
+            <li><i class="fa-solid fa-envelope"></i></li>
+        </ul>
+        <a href="" class="burger_button"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+    
+    <center>
+        <h1 style="color: black;">Let me introduce myself!</h1>
+        <hr>
+    </center>
+
+        <h3>Hello, my name is Kim Sojung<br>
+            I am 21 years old<br>
+            My hometown is Chuncheon<br>
+            My hobby is listening to music and I will introduce my favorite songs<br>
+        </h3>
+
+        <div class="song">
+            <img src="song1.jpg" alt="Song 1">
+            <div class="details">
+                <h4>파도</h4>
+                <p>Artist: 하현상</p>
+            </div>
+        </div>
+    
+        <div class="song">
+            <img src="song2.jpg" alt="Song 2">
+            <div class="details">
+                <h4>November Rain</h4>
+                <p>Artist: 잔나비</p>
+            </div>
+        </div>
+    
+        <div class="song">
+            <img src="song3.jpg" alt="Song 3">
+            <div class="details">
+                <h4>덩그러니</h4>
+                <p>Artist: 나상현씨밴드</p>
+            </div>
+        </div>
+        <h3>
+            My second hobby is playing the guitar<br>
+            So I joined a band club and practiced the songs introduced above.<br>
+        </h3>
+
+        <div class="dog">
+            <img src="dog1.jpg">
+            <img src="dog2.jpg">
+            <div class="dog-details">
+                <h3>the most beloved dog in the world!</h3>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body
+{
+    font-family: 'Gowun Dodum', sans-serif;
+    margin: 0;
+}
+.navigation
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(208, 247, 208, 0.891);
+}
+.nav_menu
+{
+    display: flex;
+    list-style: none;
+}
+.nav_menu li 
+{
+    font-size: 15px;
+    padding: 10px 15px;
+}
+.nav_menu li :hover
+{
+    background-color: rgba(255, 255, 255, 0.706);
+    border-radius: 7px;
+}
+.nav_menu li :active
+{
+    background-color: rgba(255, 255, 255, 0.706);
+    border-radius: 7px;
+}
+
+.nav_right
+{
+    display: flex;
+    list-style: none;
+}
+.nav_right li
+{
+    color: #7ac77f;;
+    padding: 10px 15px;
+}
+a
+{
+    text-decoration: none;
+    color: #7ac77f;
+}
+.burger_button
+{
+    display: none;
+    color: rgb(118, 174, 122);
+    position: absolute;
+    right: 30px;
+}
+@media screen and (max-width: 500px)
+{
+    .nav
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .nav_menu
+    {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav_menu li 
+    {
+        width: 100%;
+        text-align: center;
+    };
+
+    .nav_right
+    {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        padding: 0%;
+    }
+    .burger_button
+    {
+        display: block;
+    }
+    .nav_menu.active
+    {
+        display: flex;
+    }
+    .nav_right.active
+    {
+        display: flex;
+    }
+}

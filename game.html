@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/96196c054e.js" crossorigin="anonymous"></script>
+    <link rel="short icon" href="파비콘.png" type="image/x-ico">
+    <link rel="icon" href="파비콘.png" type="image/x-ico">
+
+    
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav_left">
+            <i class="fa-solid fa-frog fa-bounce" style="color: #7ac77f;"></i>
+            <a href="http://rlathwjd1.netlify.app">sojung</a>
+        </div>
+        <ul class="nav_menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="garrery.html">Gallery</a></li>
+            <li><a href="whereIam.html">Where I Am</a></li>
+            <li><a href="summer.html">Summer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav_right">
+            <li><i class="fa-solid fa-headphones-simple"></i></li>
+            <li><i class="fa-solid fa-envelope"></i></li>
+        </ul>
+        <a href="" class="burger_button"><i class="fa-solid fa-bars"></i></a>
+    </nav>
+
+    <center>
+    <h1>Draw Something!</h1>
+    <hr>
+    <canvas id="myCanvas" style="background-color: rgb(230, 255, 234);" width="800" height="600"></canvas>
+    <h2>line thickness : <input type="number" id="widthInput" value="2" min="0" max="20"
+                onchange="howThick=this.value">
+        line color : <input type="color" id="colorInput" value="#61A862" onchange="whatColor=this.value">
+    </h2>
+    </center>
+    <script>
+        canvas = document.getElementById("myCanvas");
+        context = canvas.getContext("2d");
+
+        canvas.addEventListener("mousemove", function(what){move(what)});
+        canvas.addEventListener("mousedown", function(what){down(what)});
+        canvas.addEventListener("mouseup", function(what){up(what)});
+        canvas.addEventListener("mouseout", function(what){out(what)});
+
+        howThick = document.getElementById("widthInput").value;
+        whatColor = document.getElementById("colorInput").value;
+
+        startX, startY;
+        isdrawing = false;
+        function down(what)
+        {
+            startX = what.offsetX;
+            startY = what.offsetY;
+            isdrawing = true;
+        }
+        function draw(nowX, nowY)
+        {
+            context.beginPath();
+            context.lineWidth = howThick;
+            context.strokeStyle = whatColor;
+            context.moveTo(startX, startY);
+            context.lineTo(nowX, nowY);
+            context.stroke();
+        }
+        function move(what)
+        {
+            if(isdrawing == false) return;
+            nowX = what.offsetX;
+            nowY = what.offsetY;
+            draw(nowX, nowY);
+            startX = nowX;
+            startY = nowY;
+        }
+        function up(what)
+        {
+            isdrawing = false;
+        }
+        function out(what)
+        {
+            isdrawing = false;
+        }
+    </script>
+</body>
+</html>
